@@ -2,6 +2,8 @@
 <head>
     <title>POP - Homepage</title>
     <meta name="layout" content="main" />
+    <g:javascript library='jquery'/>
+    <g:javascript src="${resource(dir:'js',file:'registration.js')}" />
 </head>
 <body>
 <g:if test="${session?.user}">
@@ -13,7 +15,7 @@
             <p class="info">
                 Please login with your username and password. <br />
                 Don't have an account?
-                <g:link controller="user" action="register">Sign up now!</g:link>
+                <g:link onclick="callRegistrationLink();" id="click_goto_registration">Sign up now!</g:link>
             </p>
             <g:if test="${flash.message}">
                 <div class="message">${flash.message}</div>
