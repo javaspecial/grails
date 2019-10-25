@@ -4,22 +4,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <script type="application/javascript">
-        $.ready({
-
-        });
+        $.ready({});
     </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title><g:layoutTitle default="Grails" /></title>
-    <link rel="stylesheet" href="${resource(dir:'css',file:'pop.css')}" />
-    <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
-    <g:layoutHead />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title><g:layoutTitle default="Grails"/></title>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'pop.css')}"/>
+    <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon"/>
+    <g:layoutHead/>
 </head>
+
 <body>
 <div id="wrapper">
 
     <!-- header picture -->
     <div id="header">
-        <img src="${resource(dir:'images',file:'header.jpg')}" alt="header" /></div>
+        <img src="${resource(dir: 'images', file: 'header.jpg')}" alt="header"/></div>
 <!-- END #header -->
 
 <!-- username | logout link -->
@@ -30,13 +29,14 @@
         <!-- END #login -->
     </g:if>
     <h1>POP</h1>
+
     <div id="nav"></div>
     <!-- END #nav -->
     <div id="content">
-        <g:layoutBody /></div>
+        <g:layoutBody/></div>
     <!-- END #content -->
     <div id="footer">
-        <g:render template="/common/footer" /></div>
+        <g:render template="/common/footer"/></div>
     <!-- END #footer --></div>
 <!-- END #wrapper -->
 </body>

@@ -10,9 +10,9 @@ body {
 }
 
 * {
-    margin:  0px;
+    margin: 0px;
     padding: 0px;
-    border:  0px;
+    border: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,18 +21,47 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.1em 0.0em 0.5em 0.0em;
 }
 
-h1 { font-size: 2.2em; }
-h2 { font-size: 2.0em; }
-h3 { font-size: 1.8em; }
-h4 { font-size: 1.6em; }
-h5 { font-size: 1.4em; }
-h6 { font-size: 1.2em; }
+h1 {
+    font-size: 2.2em;
+}
 
-a { color: #FF9900; text-decoration: none; }
-a:link {}
-a:visited {}
-a:hover { text-decoration: underline overline;}
-a:active {}
+h2 {
+    font-size: 2.0em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.6em;
+}
+
+h5 {
+    font-size: 1.4em;
+}
+
+h6 {
+    font-size: 1.2em;
+}
+
+a {
+    color: #FF9900;
+    text-decoration: none;
+}
+
+a:link {
+}
+
+a:visited {
+}
+
+a:hover {
+    text-decoration: underline overline;
+}
+
+a:active {
+}
 
 div#wrapper {
     width: 800px;
@@ -135,10 +164,12 @@ div.errors {
     margin: 10px 0 5px 0;
     padding: 5px 0 5px 0;
 }
+
 div.errors ul {
     list-style: none;
     padding: 0;
 }
+
 div.errors li {
     background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
     line-height: 16px;
@@ -148,6 +179,7 @@ div.errors li {
 td.errors select {
     border: 1px solid red;
 }
+
 td.errors input {
     border: 1px solid red;
 }
