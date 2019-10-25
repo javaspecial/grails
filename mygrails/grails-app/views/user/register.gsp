@@ -26,11 +26,6 @@
                              class="${hasErrors(bean:user,field:'password','errors')}" />
         </p>
         <p>
-            <label for="confirm">Confirm Password</label>
-            <g:passwordField name="confirm"
-                             class="${hasErrors(bean:user,field:'password','errors')}" />
-        </p>
-        <p>
             <label for="firstName">First Name</label>
             <g:textField name="firstName" value="${user?.firstName}"
                          class="${hasErrors(bean:user,field:'firstName','errors')}" />

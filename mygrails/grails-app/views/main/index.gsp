@@ -7,13 +7,13 @@
 <g:if test="${session?.user}">
 </g:if>
 <g:else>
-    <g:form class="simpleform" style="width:50%;" controller="user" action="login" method="POST">
+    <g:form class="simpleform" style="width:50%;" controller="user" action="login" method="POST" format="text">
         <fieldset>
             <legend>Login</legend>
             <p class="info">
                 Please login with your username and password. <br />
                 Don't have an account?
-                <g:link controller="user" action="register" >Sign up now!</g:link>
+                <g:link controller="user" action="register" method="GET">Sign up now!</g:link>
             </p>
             <g:if test="${flash.message}">
                 <div class="message">${flash.message}</div>

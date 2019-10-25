@@ -11,6 +11,7 @@ class UrlMappings {
         }
 
         "/"(view: "/main/index")
+        "200"(view: "/user/register")
         "500"(view: '/main/error')
         "404"(view: '/main/notFound')
     }
