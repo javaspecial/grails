@@ -13,13 +13,13 @@ buildscript {
 version "0.1"
 group "mygrails"
 
-apply plugin:"eclipse"
-apply plugin:"idea"
-apply plugin:"war"
-apply plugin:"org.grails.grails-web"
-apply plugin:"org.grails.grails-gsp"
-apply plugin:"com.bertramlabs.asset-pipeline"
-apply plugin:"com.github.erdi.webdriver-binaries"
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "war"
+apply plugin: "org.grails.grails-web"
+apply plugin: "org.grails.grails-gsp"
+apply plugin: "com.bertramlabs.asset-pipeline"
+apply plugin: "com.github.erdi.webdriver-binaries"
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
@@ -62,6 +62,7 @@ dependencies {
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.0.10"
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
+    runtime "mysql:mysql-connector-java:5.1.36"
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.0"
     testCompile "org.grails:grails-gorm-testing-support"
@@ -77,10 +78,10 @@ dependencies {
 
 bootRun {
     jvmArgs(
-        '-Dspring.output.ansi.enabled=always', 
-        '-noverify', 
-        '-XX:TieredStopAtLevel=1',
-        '-Xmx1024m')
+            '-Dspring.output.ansi.enabled=always',
+            '-noverify',
+            '-XX:TieredStopAtLevel=1',
+            '-Xmx1024m')
     sourceResources sourceSets.main
     String springProfilesActive = 'spring.profiles.active'
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)

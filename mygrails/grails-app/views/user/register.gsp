@@ -1,12 +1,14 @@
 <html>
 <head>
     <title>POP - User Registration</title>
-    <meta name="layout" content="main" />
+    <meta name="layout" content="main"/>
 </head>
+
 <body>
 <g:form class="simpleform" controller="user" action="register">
     <fieldset>
         <legend>User Registration</legend>
+
         <p class="info">
             Complete the form below to create an account!
         </p>
@@ -18,26 +20,30 @@
         <p>
             <label for="username">Username</label>
             <g:textField name="username" value="${user?.username}"
-                         class="${hasErrors(bean:user,field:'username','errors')}"/>
+                         class="${hasErrors(bean: user, field: 'username', 'errors')}"/>
         </p>
+
         <p>
             <label for="password">Password</label>
             <g:passwordField name="password"
-                             class="${hasErrors(bean:user,field:'password','errors')}" />
+                             class="${hasErrors(bean: user, field: 'password', 'errors')}"/>
         </p>
+
         <p>
             <label for="firstName">First Name</label>
             <g:textField name="firstName" value="${user?.firstName}"
-                         class="${hasErrors(bean:user,field:'firstName','errors')}" />
+                         class="${hasErrors(bean: user, field: 'firstName', 'errors')}"/>
         </p>
+
         <p>
             <label for="lastName">Last Name</label>
             <g:textField name="lastName" value="${user?.lastName}"
-                         class="${hasErrors(bean:user,field:'lastName','errors')}" />
+                         class="${hasErrors(bean: user, field: 'lastName', 'errors')}"/>
         </p>
+
         <p class="button">
             <label>&nbsp;</label>
-            <g:submitButton class="button" name="submitButton" value="Create Account" />
+            <g:submitButton class="button" name="submitButton" value="Create Account"/>
         </p>
     </fieldset>
 </g:form>
