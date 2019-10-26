@@ -8,10 +8,6 @@ import org.springframework.http.HttpMethod
 @Transactional
 class UserService {
     def userRegistration(params) {
-        params.each { key, value ->
-            println(key + "=" + value)
-        }
-
         def request = WebUtils.retrieveGrailsWebRequest().request
         if (request.method == HttpMethod.GET.toString()) {
             return null

@@ -1,18 +1,14 @@
 package mygrails
 
 class User {
-    // properties
-    int id
     String firstName
     String lastName
     String username
-    String password        // plain text, not stored
+    String password
 
-    // constraints
     static constraints = {
-        id generator: 'assigned'
-        firstName blank: false;
-        lastName blank: false;
+        firstName blank: false,size: 5..15;
+        lastName blank: false,size: 5..15;
         username blank: false, size: 5..15, matches: /[\S]+/, unique: true
         password blank: false, size: 5..15, matches: /[\S]+/
     }
