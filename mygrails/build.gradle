@@ -35,7 +35,6 @@ configurations {
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile fileTree(dir: 'libs', include: '*.jar')
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"

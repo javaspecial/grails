@@ -94,11 +94,9 @@ management:
 ---
 hibernate:
   cache:
-    queries: true
+#    queries: true
 #    use_second_level_cache: true
-#    use_query_cache: false
-#    region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
-#    provider_class: net.sf.ehcache.hibernate.EhCacheProvider
+#    use_query_cache: true
 dataSource:
   logSql: true
   pooled: true
@@ -110,32 +108,33 @@ dataSource:
 
 environments:
   development:
-      dataSource:
-        dbCreate: update
-        url: jdbc:mysql://localhost:3306/grails?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
+    dataSource:
+      dbCreate: update
+      url: jdbc:mysql://localhost:3306/grails?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
   test:
-      dataSource:
-        dbCreate: update
-        url: jdbc:mysql://localhost:3306/grails?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
+    dataSource:
+      dbCreate: update
+      url: jdbc:mysql://localhost:3306/grails?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
   production:
-      dataSource:
-        dbCreate: update
-        url: jdbc:mysql://localhost:3306/grails?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
-        properties:
-          jmxEnabled: true
-          initialSize: 5
-          maxActive: 50
-          minIdle: 5
-          maxIdle: 25
-          maxWait: 10000
-          maxAge: 600000
-          timeBetweenEvictionRunsMillis: 5000
-          minEvictableIdleTimeMillis: 60000
-          validationQuery: SELECT 1
-          validationQueryTimeout: 3
-          validationInterval: 15000
-          testOnBorrow: true
-          testWhileIdle: true
-          testOnReturn: false
-          jdbcInterceptors: ConnectionState
-          defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+    dataSource:
+      dbCreate: update
+      url: jdbc:mysql://localhost:3306/grails?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
+      properties:
+        jmxEnabled: true
+        initialSize: 5
+        maxActive: 50
+        minIdle: 5
+        maxIdle: 25
+        maxWait: 10000
+        maxAge: 600000
+        timeBetweenEvictionRunsMillis: 5000
+        minEvictableIdleTimeMillis: 60000
+        validationQuery: SELECT 1
+        validationQueryTimeout: 3
+        validationInterval: 15000
+        testOnBorrow: true
+        testWhileIdle: true
+        testOnReturn: false
+        jdbcInterceptors: ConnectionState
+        defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
