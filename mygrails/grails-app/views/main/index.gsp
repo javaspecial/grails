@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>POP - Homepage</title>
+    <title>Grails - Homepage</title>
     <meta name="layout" content="main"/>
 </head>
 

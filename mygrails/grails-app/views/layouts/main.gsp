@@ -28,7 +28,7 @@
             <g:link controller="user" action="logout">Logout</g:link></div>
         <!-- END #login -->
     </g:if>
-    <h1>POP</h1>
+    <h1>Grails</h1>
 
     <div id="nav"></div>
     <!-- END #nav -->

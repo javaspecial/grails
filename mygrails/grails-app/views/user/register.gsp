@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>POP - User Registration</title>
+    <title>Grails - User Registration</title>
     <meta name="layout" content="main"/>
 </head>
 

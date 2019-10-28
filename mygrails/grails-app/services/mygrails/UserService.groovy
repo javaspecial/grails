@@ -29,7 +29,7 @@ class UserService {
         def session = WebUtils.retrieveGrailsWebRequest().session
         def request = WebUtils.retrieveGrailsWebRequest().request
         if (request.method == HttpMethod.POST.toString()) {
-            User u = User.findByUsernameAndPassword(map.username, map.password)
+            User u = User.findByUsernameAndPassword(map.username, map.password, [cache: true])
             if (u) {
                 session.user = u
                 return u
