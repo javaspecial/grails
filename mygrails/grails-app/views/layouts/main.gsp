@@ -24,12 +24,14 @@
 <!-- username | logout link -->
     <g:if test="${session?.user}">
         <div id="login">
-            ${session?.user?.firstName} ${session?.user?.lastName} |
+            ${session?.user?.firstName} ${session?.user?.lastName} (${session?.user?.id}) |
             <g:link controller="user" action="logout">Logout</g:link></div>
         <!-- END #login -->
     </g:if>
-    <h1>Grails</h1>
 
+    <g:if test="${session?.user}">
+        <g:link controller="user" action="update" method="GET">Update profile</g:link>
+    </g:if>
     <div id="nav"></div>
     <!-- END #nav -->
     <div id="content">

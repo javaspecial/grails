@@ -1,6 +1,7 @@
 package mygrails
 
 import grails.gorm.transactions.Transactional
+import grails.web.servlet.mvc.GrailsHttpSession
 import grails.web.servlet.mvc.GrailsParameterMap
 import org.grails.web.util.WebUtils
 import org.springframework.http.HttpMethod
@@ -37,6 +38,18 @@ class UserService {
                 flash.message = "User not found"
                 return u
             }
+        }
+    }
+
+    def updateUser(GrailsParameterMap map) {
+        def request = WebUtils.retrieveGrailsWebRequest().request
+        if(request.method == HttpMethod.GET.toString()){
+            return  null;
+        }else if(request.method == HttpMethod.PUT.toString()){
+            User loadedUser = User.findByUsername(map.username)
+            loadedUser.properties = map
+            loadedUser.save()
+            return  loadedUser
         }
     }
 }

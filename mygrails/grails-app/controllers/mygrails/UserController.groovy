@@ -23,4 +23,12 @@ class UserController {
         session.invalidate()
         redirect(controller: 'main')
     }
+
+    def update = {
+        def user = userService.updateUser(params)
+        if(Objects.isNull(user)){
+          return  render(view: "update", model: [user:session.user])
+        }
+        redirect(controller: 'main')
+    }
 }

@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Grails - Homepage</title>
+    <title>Grails - Homepage login</title>
     <meta name="layout" content="main"/>
 </head>
 
