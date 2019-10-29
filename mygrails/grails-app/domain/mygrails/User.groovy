@@ -1,6 +1,6 @@
 package mygrails
 
-class User {
+class User implements Serializable{
     String firstName
     String lastName
     String username

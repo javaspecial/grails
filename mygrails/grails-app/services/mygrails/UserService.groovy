@@ -1,14 +1,14 @@
 package mygrails
 
 import grails.gorm.transactions.Transactional
-import grails.web.servlet.mvc.GrailsHttpSession
 import grails.web.servlet.mvc.GrailsParameterMap
 import org.grails.web.util.WebUtils
+import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.http.HttpMethod
 
 @Transactional
 class UserService {
-    def userRegistration(params) {
+    def userRegistration(params) throws DataIntegrityViolationException{
         def request = WebUtils.retrieveGrailsWebRequest().request
         if (request.method == HttpMethod.GET.toString()) {
             return null
@@ -41,15 +41,16 @@ class UserService {
         }
     }
 
-    def updateUser(GrailsParameterMap map) {
+    def updateUser(params) throws DataIntegrityViolationException{
         def request = WebUtils.retrieveGrailsWebRequest().request
-        if(request.method == HttpMethod.GET.toString()){
-            return  null;
-        }else if(request.method == HttpMethod.PUT.toString()){
-            User loadedUser = User.findByUsername(map.username)
-            loadedUser.properties = map
+        if (request.method == HttpMethod.GET.toString()) {
+            return null;
+        } else if (request.method == HttpMethod.PUT.toString()) {
+            User loadedUser = User.get(params.id)
+            loadedUser.firstName = params.firstName
+            loadedUser.lastName = params.lastName
             loadedUser.save()
-            return  loadedUser
+            return loadedUser
         }
     }
 }

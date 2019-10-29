@@ -7,27 +7,22 @@
 <body>
 <g:form class="simpleform" controller="user" action="update" method="PUT">
     <fieldset>
-        <legend>User update ${user?.id}</legend>
+        <legend>User update</legend>
 
         <p class="info">
             Complete the form below to update an account!
+            <g:hiddenField name="id" value="${user?.id}"></g:hiddenField>
         </p>
         <g:hasErrors bean="${user}">
             <div class="errors">
                 <g:renderErrors bean="${user}"/>
             </div>
         </g:hasErrors>
-        <p>
-            <label for="username">Username</label>
-            <g:textField name="username" value="${user?.username}"
-                         class="${hasErrors(bean: user, field: 'username', 'errors')}"/>
-        </p>
-
-        <p>
-            <label for="password">Password</label>
-            <g:passwordField name="password"
-                             class="${hasErrors(bean: user, field: 'password', 'errors')}"/>
-        </p>
+%{--        <p>--}%
+%{--            <label for="username">Username</label>--}%
+%{--            <g:textField name="username" value="${user?.username}"--}%
+%{--                         class="${hasErrors(bean: user, field: 'username', 'errors')}"/>--}%
+%{--        </p>--}%
 
         <p>
             <label for="firstName">First Name</label>
